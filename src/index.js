@@ -1,11 +1,7 @@
-import $ from 'jquery';
 import './style.scss';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const startTime = new Date();
+const App = () => <div className="test">All the REACT are belong to us!</div>;
 
-const time = (initTime) => {
-  const currTime = new Date();
-  return Math.floor((currTime - initTime) / 1000);
-};
-
-setInterval(() => { $('#main').html(`You've been on this page for ${time(startTime)} seconds.`); }, 1000);
+ReactDOM.render(<App />, document.getElementById('main'));
