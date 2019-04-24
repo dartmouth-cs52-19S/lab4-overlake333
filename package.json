@@ -44,7 +44,8 @@
     "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router": "^5.0.0"
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0"
   },
   "repository": "https://github.com/dartmouth-cs52-19S/starterpack-overlake333",
   "author": "overlake333 <taylor.m.olson.21@dartmouth.edu>"
