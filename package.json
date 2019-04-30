@@ -8,7 +8,7 @@
     "test": "eslint src/**.js",
     "build": "yarn clean; NODE_ENV=production webpack --colors",
     "clean": "rimraf dist",
-    "deploy": "yarn build; surge -p dist -d taylorolson-cs52-starter.surge.sh; yarn clean"
+    "deploy": "yarn build; surge -p dist -d taylorolson-cs52-lab4.surge.sh; yarn clean"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -41,12 +41,14 @@
     "axios": "^0.18.0",
     "jquery": "^3.4.0",
     "lodash.debounce": "^4.0.8",
+    "marked": "^0.6.2",
     "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.2",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
+    "react-textarea-autosize": "^7.1.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },

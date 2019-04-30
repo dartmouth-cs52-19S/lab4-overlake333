@@ -1,50 +1,33 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route, NavLink, Switch,
+  Switch, BrowserRouter as Router, Route,
 } from 'react-router-dom';
-import Counter from '../containers/counter';
-import Controls from '../containers/controls';
+import Navbar from './NavBar';
+import '../style.scss';
+import newPost from '../containers/newPost';
+import Post from '../containers/Post';
+import Posts from '../containers/posts';
 
-
-const About = (props) => {
-  return <div> All there is to know about me </div>;
-};
-const Welcome = (props) => {
-  return <div>Welcome<Counter /><Controls /></div>;
-};
-const Test = (props) => {
-  return <div> ID: {props.match.params.id} </div>;
-};
-const FallBack = (props) => {
-  return <div>URL Not Found</div>;
-};
-const Nav = (props) => {
-  return (
-    <nav>
-      <ul>
-        <li><NavLink to="/" exact>Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
-      </ul>
-    </nav>
-  );
-};
-
-
-const App = (props) => {
+// XTRA-CREDIT: made my app into something different than a blog. It is an online recipe library
+// where you can add, edit, and delete recipies
+const App = () => {
   return (
     <Router>
-      <div>
-        <Nav />
+      <div className="app container">
+        <Navbar />
+        <div id="image">
+          <img id="backgroundImg" src="https://static01.nyt.com/images/2018/04/29/magazine/29mag-eat1/29mag-eat1-threeByTwoMediumAt2X.jpg" alt="food" />
+        </div>
         <Switch>
-          <Route exact path="/" component={Welcome} />
-          <Route path="/about" component={About} />
-          <Route exact path="/test/:id" component={Test} />
-          <Route component={FallBack} />
+          <Route exact path="/" component={Posts} />
+          <Route path="/posts/new" component={newPost} />
+          <Route path="/posts/:postID" component={Post} />
+
+          <Route render={() => (<div>post not found </div>)} />
         </Switch>
       </div>
     </Router>
+
   );
 };
 

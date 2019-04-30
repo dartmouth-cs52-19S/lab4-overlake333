@@ -1,12 +1,288 @@
 body, html {
     font-family: "Roboto", sans-serif;
-    color:  black;
-    background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
-    height: 100%;
+    color:  black; 
+    position: 0;
 }
 
-.logo {
-  .active {
-    color: pink;
+#header {
+  position: absolute;
+  height: 80px;
+  color: rgb(255, 113, 113);
+  display: flex;
+  justify-content: center;
+  font-style: 30px;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin-left: 0px;
+  width: 100%;
+}
+
+#backgroundImg {
+    position:absolute;
+    object-fit:cover;
+    width: 100%;
+    height: 400px;
+    display:flex;
+    left: 0;
+    top: 0;
+    z-index:-1;
+}
+
+nav {
+  background-color: #fff;
+  width: 800px;
+  text-align: center;
+}
+
+ul {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-style: 25px;
+  padding: none;
+  list-style: none;
+  margin-top: 0;
+
+  li p {
+    margin-left: 20px;
+    margin-top: 5px;
+    color: #df7b5c;
+    font-size: 50px;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
   }
+}
+
+#links{
+  display:flex;
+  flex-direction: row;
+  justify-content: end;
+  list-style: none;
+  text-emphasis: none;
+  font-size: 25px;
+  margin-top: 21px;
+
+  li a {
+    text-decoration: none;
+    color: #df7b5c;
+    font-size: 20px;
+  }
+  input {
+    margin-left: 40px;
+    margin-right: 40px;
+    color: #df7b5c;
+    border: 2px dotted #df7b5c;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 25px;
+    overflow: visible;
+  }
+}
+
+#editNode {
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  margin-top: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+#editNoteContainer {
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  margin-top: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+#post{
+  margin-top: 300px;
+  min-height:300px;
+  width:300px;
+  background-color: white;
+  margin:10px;
+  border:1px solid #df7b5c;
+  color: #000000;
+
+  #postTitle {
+    padding: 10px;
+    font-size: 1.5em;
+  }
+
+  img {
+    position:absolute;
+    object-fit:cover;
+    width: 300px;
+    height: 200px;
+    display:flex;
+  }
+
+  #postImage {
+    height: 200px;
+    width: 300px;
+  }
+
+  #postTag {
+    padding-top: 210px;
+    color:#96442b;
+  }
+}
+
+#notesContainer {
+  margin-top: 400px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#note{
+  min-height:300px;
+  width: 400px;
+  background-color: white;
+  margin:10px;
+  border:1px solid #df7b5c;
+  margin-top: 100px;
+  color: #000000;
+
+  #noteTitle {
+    padding: 10px;
+    font-size: 1.5em;
+  }
+
+  img {
+    position:absolute;
+    object-fit:cover;
+    width: 400px;
+    height: 200px;
+    display:flex;
+  }
+
+  #noteImage {
+    height: 200px;
+    width: 300px;
+  }
+
+  #noteContent p {
+    padding: 10px;
+  }
+
+  #noteTag {
+    padding: 10px;
+    color:#96442b;
+  }
+}
+
+#inputContainer {
+  background-color: #df7b5ce3;
+  padding: 10px;
+  min-height:400px;
+  min-width:500px;
+  display:flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top:20px;
+  box-sizing: border-box;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: space-evenly;
+    
+  }
+}
+
+#NEWNote {
+  margin-top: 15%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+// #fieldContainer{
+//   height:400px;
+//   width:400px;
+//   background-color: white;
+//   // margin:40px;
+//   //margin-top: 200px;
+//   border:1px solid #df7b5c;
+//   display:flex;
+//   flex-direction: column;
+//   padding-left: 20px;
+//   padding-top:20px;
+//   box-sizing: border-box;
+//   position: fixed;
+//   top: 25%;
+//   left: 35%;
+// }
+
+#editButtonContainer{
+  height:60px;
+  width:302px;
+  background-color: rgba(255, 255, 255, 0.822);
+  margin:10px;
+  border-radius: 5px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  a {
+    width:95px;
+  }
+}
+
+#editButton{
+  height:50px;
+  background-color: #df7b5c;
+  color:white;
+  font-size: 14px;
+  margin:5px;
+  width:80px;
+  border-radius: 8px;
+}
+
+#createButton{
+  background-color: #fff;
+  color: #df7b5c;
+  font-weight: bolder;
+  font-size: 16px;
+  height: 50px;
+  width: 380px;
+  box-sizing: border-box;
+  margin-left: 35.5%;
+  margin-top: 40px;
+
+  &:hover {
+    background-color: #df7b5c4f;
+  }
+
+}
+
+textarea {
+  font-size: 16px;
+  min-width: 435px;
+  min-height: 60px;
+}
+
+.inputField{
+  width:200px;
+  height:20px;
+  margin:10px;
+  display:block;
+  outline:none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  width: 322px;
 }
