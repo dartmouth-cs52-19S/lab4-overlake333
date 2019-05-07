@@ -14,9 +14,11 @@ class Post extends Component {
       cover_url: props.post.cover_url,
       content: props.post.content,
       tags: props.post.tags,
+      comments: props.post.comments,
       isEditing: false,
     };
 
+    this.makeNewInputComment = this.makeNewInputComment.bind(this);
     this.onInputChange = this.onInputChange.bind(this);
     this.deletePost = this.deletePost.bind(this);
     this.updatePost = this.updatePost.bind(this);
@@ -34,11 +36,14 @@ class Post extends Component {
   }
 
   componentWillReceiveProps(props) {
+    console.log('componenet will receive props');
+    console.log(props);
     this.setState({
       title: props.post.title,
       content: props.post.content,
       tags: props.post.tags,
       cover_url: props.post.cover_url,
+      comments: props.post.comments,
       isEditing: false,
     });
   }
@@ -54,12 +59,19 @@ class Post extends Component {
       this.setState({ tags: event.target.value });
     } else if (id === 'cover_url') {
       this.setState({ cover_url: event.target.value });
+    } else if (id === 'comments') {
+      console.log(this.state.comments);
+      this.setState({ comments: event.target.value });
     }
   }
 
   updatePost(event) {
     event.preventDefault();
     this.setState({ isEditing: false });
+    // this.state.comments = `<br />${this.state.comments}`;
+    // this.props.post.comments.push(this.state.comments);
+    // console.log(this.props.post.comments);
+    // console.log(this.state.comments);
     // console.log(this.state);
     this.props.updatePost(this.props.match.params.postID, this.state);
   }
@@ -104,6 +116,15 @@ class Post extends Component {
     );
   }
 
+  // value={this.state.comments}
+  makeNewInputComment() {
+    return (
+      <label htmlFor="comments">comments
+        <textarea id="comments" className="inputField" onChange={this.onInputChange} />
+      </label>
+    );
+  }
+
   // toggling between editing and updating
   renderEdit() {
     if (this.state.isEditing) {
@@ -117,6 +138,8 @@ class Post extends Component {
     }
   }
 
+  // {this.makeNewInputComment()}
+  // <div id="comment">{this.state.comment}</div>
   renderNewPost() {
     if (this.state.isEditing) {
       return (
@@ -126,6 +149,8 @@ class Post extends Component {
             {this.makeNewInputCoverURL()}
             {this.makeNewInputContent()}
             {this.makeNewInputTags()}
+            {this.makeNewInputComment()}
+
           </form>
         </div>
       );
@@ -138,6 +163,9 @@ class Post extends Component {
           </div>
           <div id="noteContent" dangerouslySetInnerHTML={{ __html: marked(this.state.content || '') }} />
           <div id="noteTag">{this.state.tags}</div>
+          <p><strong>Comments</strong></p>
+          <div id="noteComment"><i>{this.state.comments}</i></div>
+
         </div>
       );
     }
