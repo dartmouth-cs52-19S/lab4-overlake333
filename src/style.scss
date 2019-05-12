@@ -286,3 +286,36 @@ a {
   color: #fff;
   width: 322px;
 }
+
+
+#signUpButton{
+  margin-left: 100px;
+  color:white;
+  font-family: futura;
+}
+
+
+#signUp {
+  padding: 100px;
+}
+
+#signIn {
+  padding: 100px;
+  padding-top: 0px;
+}
+
+#logOutButton {
+    margin-left: 100px;
+    color:rgb(240, 174, 174);
+    background-color: white;
+    font-family: futura;
+    border-radius: 5px;
+    border: none;
+    padding-top: 10px;
+    padding-bottom:10px;
+    height: 20px;
+
+    :hover{
+      color:rgb(240, 174, 174);
+    }
+}

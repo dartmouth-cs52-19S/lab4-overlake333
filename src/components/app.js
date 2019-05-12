@@ -7,6 +7,8 @@ import '../style.scss';
 import newPost from '../containers/newPost';
 import Post from '../containers/Post';
 import Posts from '../containers/posts';
+import SignUp from './SignUp';
+import requireAuth from '../containers/reqAuth';
 
 // XTRA-CREDIT: made my app into something different than a blog. It is an online recipe library
 // where you can add, edit, and delete recipies
@@ -20,9 +22,9 @@ const App = () => {
         </div>
         <Switch>
           <Route exact path="/" component={Posts} />
-          <Route path="/posts/new" component={newPost} />
+          <Route path="/posts/new" component={requireAuth(newPost)} />
           <Route path="/posts/:postID" component={Post} />
-
+          <Route path="/Login" component={SignUp} />
           <Route render={() => (<div>post not found </div>)} />
         </Switch>
       </div>

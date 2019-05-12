@@ -18,8 +18,6 @@ class NewPost extends Component {
 
   onInputChange(event) {
     const { id } = event.target;
-    // console.log(id);
-    // console.log(event.id);
     if (id === 'title') {
       this.setState({ title: event.target.value });
       console.log(this.state);
